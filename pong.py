@@ -174,13 +174,14 @@ if abs(motion[1]) < 0.1:
 while True:
     clock.tick(fps)
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            sys.exit()
         if event.type == pygame.JOYBUTTONDOWN:
             if event.button == 0:
+                sys.exit()
+        if event.type == pygame.JOYBUTTONDOWN:
+            if event.button == 10:
                 ball.start_moving()
                 playing = True
-            if event.button == 1:
+            if event.button == 9:
                 restart()
         if event.type == pygame.JOYAXISMOTION:
             if event.value < 0:
